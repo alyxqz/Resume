@@ -45,4 +45,21 @@
     <p>&copy; 2024 Your Name</p>
   </footer>
 </body>
+<script>
+  document.getElementById("download-resume").addEventListener("click", function () {
+    const element = document.body; // Or use document.getElementById('resume') for a specific section
+
+    const options = {
+      filename: 'My_Resume.pdf',
+      jsPDF: { format: 'a4', orientation: 'portrait' },
+      html2canvas: {
+        scale: 2, // Improve quality
+        useCORS: true, // Prevent cross-origin issues
+      },
+      pagebreak: { mode: ['css', 'legacy'] },
+    };
+
+  html2pdf().set(options).from(element).save();
+});
+</script>
 </html>
