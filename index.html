@@ -44,24 +44,6 @@
       color: #fff;
       margin-top: 2rem;
     }
-    
-    @media print {
-    header {
-      margin:0;
-      padding:1rem 0;
-    }
-    body {
-      /* background: white;
-      color: black; */
-      margin: 0;
-      /* padding: 0; */
-    }
-    main{
-      margin: 0 auto;
-      padding: 1rem;
-    }
-  }
-
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
@@ -111,27 +93,20 @@
   </footer>
 </body>
 <script>
-  document.getElementById("download-resume").addEventListener("click", function () {
-    // Select the content you want to include in the PDF
-    const element = document.body; // or any specific section, e.g., document.getElementById('resume')
-    const header =document.querySelector("header")
+document.getElementById("download-resume").addEventListener("click", function () {
+  const element = document.body; // Or use document.getElementById('resume') for a specific section
 
-    const originalStyle =header.style.padding;
-    header.style.padding =0;
+  const options = {
+    filename: 'My_Resume.pdf',
+    jsPDF: { format: 'a4', orientation: 'portrait' },
+    html2canvas: {
+      scale: 2, // Improve quality
+      useCORS: true, // Prevent cross-origin issues
+    },
+    pagebreak: { mode: ['css', 'legacy'] },
+  };
 
-    // Configure options for the PDF
-    const options = {
-      filename: 'My_Resume.pdf',
-      jsPDF: { format: 'a4', orientation: 'portrait' },
-      html2canvas: {scale:2},
-      pagebreak:{mode: ['css', 'legacy']}
-    };
-
-    // Generate the PDF
-    html2pdf().set(options).from(element).save().finally(
-      header.style.padding =originalStyle
-    );
-
-  });
+  html2pdf().set(options).from(element).save();
+});
 </script>
 </html>
