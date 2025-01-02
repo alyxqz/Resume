@@ -4,109 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alex Quinonez - Resume</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-      color: #333;
-      line-height: 1.6;
-    }
-    header {
-      background: #333;
-      color: #fff;
-      padding: 1.5rem 0;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-    }
-    main {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background: #fff;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-    section {
-      margin-bottom: 2rem;
-    }
-    section h2 {
-      margin-bottom: 1rem;
-      border-bottom: 2px solid #333;
-      display: inline-block;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #333;
-      color: #fff;
-      margin-top: 2rem;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
   <header>
-    <h1>John Doe</h1>
-    <p>Software Engineer | NetSuite Specialist</p>
+    <h1>Alex Quinonez</h1>
+    <p>Web Developer | Designer | Problem Solver</p>
   </header>
   <main>
-    <section>
+    <section id="about">
       <h2>About Me</h2>
-      <p>
-        Hi, I'm John, a passionate software engineer with 5+ years of experience in developing scalable web applications.
-      </p>
+      <p>I'm a highly motivated web developer with a passion for building clean, responsive, and user-friendly websites.</p>
     </section>
-    <section>
+    <section id="experience">
       <h2>Experience</h2>
-      <p><strong>Company A</strong> (2020 - Present)</p>
+      <p><strong>Web Developer</strong> at Tech Co. (2020–Present)</p>
       <ul>
-        <li>Developed a CRM platform, increasing efficiency by 30%.</li>
-        <li>Led a team of 4 developers to deliver projects on time.</li>
-      </ul>
-      <p><strong>Company B</strong> (2018 - 2020)</p>
-      <ul>
-        <li>Worked on improving website performance, reducing load times by 40%.</li>
-        <li>Implemented CI/CD pipelines, improving deployment efficiency.</li>
+        <li>Built a dynamic e-commerce platform using React and Node.js.</li>
+        <li>Improved page load speeds by optimizing images and assets.</li>
       </ul>
     </section>
-    <section>
+    <section id="skills">
       <h2>Skills</h2>
       <ul>
-        <li>JavaScript (React, Node.js)</li>
-        <li>Python (Django, Flask)</li>
-        <li>DevOps (Docker, Kubernetes, AWS)</li>
+        <li>HTML, CSS, JavaScript</li>
+        <li>React, Vue.js</li>
+        <li>Python, Django</li>
       </ul>
     </section>
-    <section>
+    <section id="contact">
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:john.doe@example.com">john.doe@example.com</a></p>
-      <p>GitHub: <a href="https://github.com/johndoe" target="_blank">github.com/johndoe</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/johndoe" target="_blank">linkedin.com/in/johndoe</a></p>
-      <button id="download-resume">Download Resume (PDF)</button>
+      <p>Email: <a href="mailto:yourname@example.com">yourname@example.com</a></p>
+      <p>GitHub: <a href="https://github.com/yourusername">github.com/yourusername</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/yourname">linkedin.com/in/yourname</a></p>
     </section>
   </main>
   <footer>
-    <p>&copy; 2024 John Doe. All Rights Reserved.</p>
+    <p>&copy; 2024 Your Name</p>
   </footer>
 </body>
-<script>
-document.getElementById("download-resume").addEventListener("click", function () {
-  const element = document.body; // Or use document.getElementById('resume') for a specific section
-
-  const options = {
-    filename: 'My_Resume.pdf',
-    jsPDF: { format: 'a4', orientation: 'portrait' },
-    html2canvas: {
-      scale: 2, // Improve quality
-      useCORS: true, // Prevent cross-origin issues
-    },
-    pagebreak: { mode: ['css', 'legacy'] },
-  };
-
-  html2pdf().set(options).from(element).save();
-});
-</script>
 </html>

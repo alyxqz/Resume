@@ -37,3 +37,29 @@ footer {
   background: #333;
   color: white;
 }
+
+@media print {
+  header {
+    margin: 0;
+    padding: 0.5rem 0; /* Minimize padding */
+    background-color: #333; /* Retain the header background */
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 2rem; /* Adjust font size to fit better */
+  }
+
+  p {
+    margin: 0;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  main {
+    margin: 0 auto;
+    padding: 1rem;
+  }
+}
