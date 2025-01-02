@@ -53,10 +53,8 @@
       filename: 'My_Resume.pdf',
       jsPDF: { format: 'a4', orientation: 'portrait' },
       html2canvas: {
-        scrollX: -window.scrollX,
+        scrollX: 0,
         scrollY: -window.scrollY,
-        windowWidth: document.documentElement.offsetWidth,
-        windowHeight: document.documentElement.offsetHeight,
         scale: 2, // Improve quality
         useCORS: true, // Prevent cross-origin issues
       },
