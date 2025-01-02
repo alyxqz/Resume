@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>John Doe - Resume</title>
+  <title>Alex Quinonez - Resume</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -44,12 +44,23 @@
       color: #fff;
       margin-top: 2rem;
     }
+    
+    @media print {
+    body {
+      background: white;
+      color: black;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
   <header>
     <h1>John Doe</h1>
-    <p>Software Engineer | Full Stack Developer</p>
+    <p>Software Engineer | NetSuite Specialist</p>
   </header>
   <main>
     <section>
@@ -84,10 +95,26 @@
       <p>Email: <a href="mailto:john.doe@example.com">john.doe@example.com</a></p>
       <p>GitHub: <a href="https://github.com/johndoe" target="_blank">github.com/johndoe</a></p>
       <p>LinkedIn: <a href="https://linkedin.com/in/johndoe" target="_blank">linkedin.com/in/johndoe</a></p>
+      <button id="download-resume">Download Resume (PDF)</button>
     </section>
   </main>
   <footer>
     <p>&copy; 2024 John Doe. All Rights Reserved.</p>
   </footer>
 </body>
+<script>
+  document.getElementById("download-resume").addEventListener("click", function () {
+    // Select the content you want to include in the PDF
+    const element = document.body; // or any specific section, e.g., document.getElementById('resume')
+
+    // Configure options for the PDF
+    const options = {
+      filename: 'My_Resume.pdf',
+      jsPDF: { format: 'a4', orientation: 'portrait' }
+    };
+
+    // Generate the PDF
+    html2pdf().set(options).from(element).save();
+  });
+</script>
 </html>
