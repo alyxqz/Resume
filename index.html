@@ -114,15 +114,24 @@
   document.getElementById("download-resume").addEventListener("click", function () {
     // Select the content you want to include in the PDF
     const element = document.body; // or any specific section, e.g., document.getElementById('resume')
+    const header =document.querySelector("header")
+
+    const originalStyle =header.style.padding;
+    header.style.padding =0;
 
     // Configure options for the PDF
     const options = {
       filename: 'My_Resume.pdf',
-      jsPDF: { format: 'a4', orientation: 'portrait' }
+      jsPDF: { format: 'a4', orientation: 'portrait' },
+      html2canvas: {scale:2},
+      pagebreak:{mode: ['css', 'legacy']}
     };
 
     // Generate the PDF
-    html2pdf().set(options).from(element).save();
+    html2pdf().set(options).from(element).save().finally(
+      header.style.padding =originalStyle
+    );
+
   });
 </script>
 </html>
