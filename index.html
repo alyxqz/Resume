@@ -6,6 +6,7 @@
   <title>Alex Quinonez - Resume</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
   <header>
@@ -46,24 +47,33 @@
   </footer>
 </body>
 <script>
-  document.getElementById("download-resume").addEventListener("click", function () {
-    const element = document.body; // Or use document.getElementById('resume') for a specific section
+  document.getElementById("download-resume").addEventListener("click", async function () {
+    const { jsPDF } = window.jspdf;
 
-    // const options = {
-    //   filename: 'My_Resume.pdf',
-    //   jsPDF: { format: 'a4', orientation: 'portrait' },
-    //   scrollX: 0,
-    //   scrollY: 0,
-    //   html2canvas: {
-    //     scale: 2, // Improve quality
-    //     useCORS: true, // Prevent cross-origin issues
-    //   },
-    //   pagebreak: { mode: ['css', 'legacy'] },
-    // };
+    // Create a new jsPDF instance
+    const pdf = new jsPDF({
+      orientation: "portrait",
+      unit: "px",
+      format: "a4",
+    });
 
-  // html2pdf().set(options).from(element).save();
-  html2canvas(element, {scrollX:0, scrollY:-window.scrollY})
+    // Select the content you want to convert (e.g., the entire body or a specific section)
+    const content = document.querySelector("body"); // Change this to the section you want (e.g., document.getElementById('resume'))
 
-});
+    // Use html2canvas to render the content as an image
+    const canvas = await html2canvas(content, { scale: 2 });
+
+    // Get image data from canvas
+    const imgData = canvas.toDataURL("image/png");
+
+    // Add the image to the PDF, scaled to fit
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+
+    pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+
+    // Save the PDF
+    pdf.save("My_Resume.pdf");
+  });
 </script>
 </html>
