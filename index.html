@@ -46,7 +46,8 @@
     <p>&copy; 2024 Your Name</p>
   </footer>
 </body>
-<script>
+
+<!-- <script>
 document.getElementById("download-resume").addEventListener("click", function () {
   const element = document.body; // Or use document.getElementById('resume') for a specific section
 
@@ -62,5 +63,55 @@ document.getElementById("download-resume").addEventListener("click", function ()
 
   html2pdf().set(options).from(element).save();
 });
+</script> -->
+
+<script>
+  document.getElementById("download-resume").addEventListener("click", function () {
+    const { jsPDF } = window.jspdf;
+
+    // Create a new PDF document
+    const pdf = new jsPDF({
+      orientation: "portrait",
+      unit: "px",
+      format: "a4", // Standard A4 size
+    });
+
+    // Define the page width and height
+    const pageWidth = pdf.internal.pageSize.getWidth();
+    const pageHeight = pdf.internal.pageSize.getHeight();
+
+    // Add a header
+    pdf.setFont("helvetica", "bold");
+    pdf.setFontSize(18);
+    pdf.text("My Resume", pageWidth / 2, 40, { align: "center" });
+
+    // Add a horizontal line below the header
+    pdf.setLineWidth(0.5);
+    pdf.line(20, 50, pageWidth - 20, 50);
+
+    // Add content (e.g., sections of your resume)
+    pdf.setFont("helvetica", "normal");
+    pdf.setFontSize(12);
+    pdf.text("John Doe", 20, 80);
+    pdf.text("Web Developer | Designer | Problem Solver", 20, 100);
+
+    pdf.text("About Me:", 20, 140);
+    pdf.text(
+      "I'm a highly motivated web developer with experience in building dynamic and user-friendly websites.",
+      20,
+      160,
+      { maxWidth: pageWidth - 40 }
+    );
+
+    // Add additional sections
+    pdf.text("Skills:", 20, 200);
+    pdf.text("- JavaScript", 20, 220);
+    pdf.text("- HTML & CSS", 20, 240);
+    pdf.text("- React", 20, 260);
+
+    // Save the PDF
+    pdf.save("My_Resume.pdf");
+  });
 </script>
+
 </html>
