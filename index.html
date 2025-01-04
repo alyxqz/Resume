@@ -49,6 +49,10 @@
     }
   </style>
 </head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+    integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <body>
 
   <h1>Alex Quiñonez</h1>
@@ -116,4 +120,77 @@
   </ul>
 
 </body>
+<script>
+    document.getElementById("download-resume").addEventListener("click", function () {
+    const { jsPDF } = window.jspdf;
+
+    // Create a new PDF document
+    const pdf = new jsPDF({
+      orientation: "portrait",
+      unit: "px",
+      format: "a4", // Standard A4 size
+    });
+
+    // Select the content you want to convert (e.g., the entire body or a specific section)
+    const content = document.querySelector("body"); // Change this to the section you want (e.g., document.getElementById('resume'))
+
+    // Use html2canvas to render the content as an image
+    const canvas = html2canvas(content, { scale: 2 });
+
+    // Get image data from canvas
+    const imgData = canvas.toDataURL("image/png");
+
+    // Add the image to the PDF, scaled to fit
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+
+    pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+
+    // Save the PDF
+    pdf.save("My_Resume.pdf");
+    
+    // pdf.html(document.body, {
+    //     callback: function (doc) {
+    //       doc.save();
+    //     }
+    //   });
+
+    // // Define the page width and height
+    // const pageWidth = pdf.internal.pageSize.getWidth();
+    // const pageHeight = pdf.internal.pageSize.getHeight();
+
+    // // Add a header
+    // pdf.setFont("helvetica", "bold");
+    // pdf.setFontSize(18);
+    // pdf.text("My Resume", pageWidth / 2, 40, { align: "center" });
+
+    // // Add a horizontal line below the header
+    // pdf.setLineWidth(0.5);
+    // pdf.line(20, 50, pageWidth - 20, 50);
+
+    // // Add content (e.g., sections of your resume)
+    // pdf.setFont("helvetica", "normal");
+    // pdf.setFontSize(12);
+    // pdf.text("John Doe", 20, 80);
+    // pdf.text("Web Developer | Designer | Problem Solver", 20, 100);
+
+    // pdf.text("About Me:", 20, 140);
+    // pdf.text(
+    //   "I'm a highly motivated web developer with experience in building dynamic and user-friendly websites.",
+    //   20,
+    //   160,
+    //   { maxWidth: pageWidth - 40 }
+    // );
+
+    // // Add additional sections
+    // pdf.text("Skills:", 20, 200);
+    // pdf.text("- JavaScript", 20, 220);
+    // pdf.text("- HTML & CSS", 20, 240);
+    // pdf.text("- React", 20, 260);
+
+    // // Save the PDF
+    // pdf.save("My_Resume.pdf");
+  });
+
+</script>
 </html>
