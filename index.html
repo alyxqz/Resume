@@ -3,136 +3,111 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alex Quinonez - Resume</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
-      integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
-      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <title>Resume - Alex Quiñonez</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      color: #10A37F;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+    h2 {
+      font-size: 22px;
+      margin-top: 20px;
+    }
+    p, ul {
+      margin: 0 0 10px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .contact {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    .contact span {
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .job-title {
+      font-weight: bold;
+    }
+    .job-details {
+      margin-left: 20px;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Alex Quinonez</h1>
-    <p>Web Developer | Designer | Problem Solver</p>
-  </header>
-  <main>
-    <section id="about">
-      <h2>About Me</h2>
-      <p>I'm a highly motivated web developer with a passion for building clean, responsive, and user-friendly websites.</p>
-    </section>
-    <section id="experience">
-      <h2>Experience</h2>
-      <p><strong>Web Developer</strong> at Tech Co. (2020–Present)</p>
+
+  <h1>Alex Quiñonez</h1>
+  <p class="contact">
+    <span><strong>Phone:</strong> 909-994-7590</span>
+    <span><strong>Email:</strong> aquinonez24@gmail.com</span>
+    <span><strong>Location:</strong> Pomona, CA</span>
+  </p>
+
+  <h2>Professional Experience</h2>
+
+  <p><span class="job-title">NetSuite Engineer</span> - Porch.com, Seattle, WA<br><em>Oct 2022 – Nov 2024</em></p>
+  <ul class="job-details">
+    <li>Developed scripted reports consolidated into PDF, Excel, or CSV formats and scheduled for automated email distribution.</li>
+    <li>Built a custom payment portal allowing invoiced NetSuite customers to access open invoices, download PDFs, update credit card details, and make payments.</li>
+    <li>Integrated Authorize.net for scheduled batch processing and reconciliations.</li>
+    <li>Designed tools for NetSuite Electronic Payments using ISO 20022 XML files.</li>
+    <li>Created a financial bank parser module for reconciliation using Boomi and REST APIs.</li>
+    <li>Integrated NetSuite API with JWT and OAuth 2.0/1.0 for analytics solutions.</li>
+  </ul>
+
+  <p><span class="job-title">NetSuite Engineer</span> - Bird, Santa Monica, CA<br><em>May 2020 – Present</em></p>
+  <ul class="job-details">
+    <li>Streamlined inventory tracking between physical locations and automated reconciliation of quantity discrepancies using RESTlets and Celigo.</li>
+    <li>Automated intercompany transactions and designed interfaces between NetSuite and internal reporting applications.</li>
+    <li>Enhanced Advanced Approvals and validated item costs by location for intercompany transfers.</li>
+  </ul>
+
+  <p><span class="job-title">Sr. NetSuite Developer</span> - Grove Collaborative, San Francisco, CA<br><em>Jun 2019 – Apr 2020</em></p>
+  <ul class="job-details">
+    <li>Built custom tools for reconciling inventory across internal and third-party systems.</li>
+    <li>Automated receipt generation and inventory transfers using SuiteScript and Dell Boomi.</li>
+    <li>Created data pipelines for operational metrics such as inventory counts, revenue recognition, and banking data analysis.</li>
+  </ul>
+
+  <p><span class="job-title">NetSuite Developer</span> - CarGurus, Cambridge, MA<br><em>Sep 2017 – Jun 2019</em></p>
+  <ul class="job-details">
+    <li>Implemented Advanced Revenue Recognition and synchronized revenue data with third-party applications.</li>
+    <li>Automated integrations between NetSuite, Concur, and Zuora using Dell Boomi APIs.</li>
+    <li>Developed a custom ACH module for electronic payments and enhanced SOX compliance by implementing approval processes.</li>
+  </ul>
+
+  <p><span class="job-title">NetSuite Admin</span> - Harvest Power, Waltham, MA<br><em>Jul 2015 – Sep 2017</em></p>
+  <ul class="job-details">
+    <li>Designed custom NetSuite business processes to synchronize data, validate user input, and enforce rules for data integrity.</li>
+    <li>Developed a "Tax Automation" module for compliance with the Canadian Ministry of Finance.</li>
+    <li>Built a vendor portal to provide real-time inventory visibility.</li>
+  </ul>
+
+  <h2>Education</h2>
+  <p>Pace University – New York, NY<br
+    <p>Pace University – New York, NY<br>
+      <em>May 2013</em></p>
       <ul>
-        <li>Built a dynamic e-commerce platform using React and Node.js.</li>
-        <li>Improved page load speeds by optimizing images and assets.</li>
+        <li>B.B.A in Quantitative Business Analysis</li>
+        <li><strong>Accolades:</strong> Cum Laude</li>
       </ul>
-    </section>
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>HTML, CSS, JavaScript</li>
-        <li>React, Vue.js</li>
-        <li>Python, Django</li>
-      </ul>
-    </section>
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:yourname@example.com">yourname@example.com</a></p>
-      <p>GitHub: <a href="https://github.com/yourusername">github.com/yourusername</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/yourname">linkedin.com/in/yourname</a></p>
-      <button id="download-resume">Download Resume (PDF)</button>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2024 Your Name</p>
-  </footer>
-</body>
-
-<!-- <script>
-document.getElementById("download-resume").addEventListener("click", function () {
-  const element = document.body; // Or use document.getElementById('resume') for a specific section
-
-  const options = {
-    filename: 'My_Resume.pdf',
-    jsPDF: { format: 'a4', orientation: 'portrait' },
-    html2canvas: {
-      scale: 2, // Improve quality
-      useCORS: true, // Prevent cross-origin issues
-    },
-    pagebreak: { mode: ['css', 'legacy'] },
-  };
-
-  html2pdf().set(options).from(element).save();
-});
-</script> -->
-
-<script>
-  
-  document.getElementById("download-resume").addEventListener("click", function () {
-    const { jsPDF } = window.jspdf;
-
-    // Create a new PDF document
-    const pdf = new jsPDF({
-      orientation: "portrait",
-      unit: "px",
-      format: "a4", // Standard A4 size
-    });
     
-    var myHtml =  '<!DOCTYPE  html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">' +
-'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>3bfd1f97-1a0f-46c9-b1a3-2ce690e8fe7c</title><meta name="author" content="CIS"/><style type="text/css"> * {margin:0; padding:0; text-indent:0; }' +
-' h1 { color: black; font-family:"Segoe UI", sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 20pt; }' +
-' .s1 { color: black; font-family:"Segoe UI", sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 16pt; }' +
-' .p, p { color: black; font-family:"Segoe UI", sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 12pt; margin:0pt; }' +
-' h3 { color: black; font-family:"Segoe UI", sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 12pt; }' +
-' .a { color: black; font-family:"Segoe UI", sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 12pt; }' +
-' h2 { color: black; font-family:"Segoe UI", sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 16pt; }' +
-'</style></head><body><h1 style="padding-top: 3pt;padding-left: 11pt;text-indent: 0pt;text-align: left;">Alex Quiñonez</h1><p class="s1" style="padding-top: 7pt;padding-left: 11pt;text-indent: 0pt;text-align: left;">Software Engineer</p><p style="padding-top: 9pt;padding-left: 11pt;text-indent: 0pt;line-height: 92%;text-align: left;">Pragmatic expertise having been successful in scoping, testing and implementing a wide variety of custom business solutions while leveraging third party applications &amp; products</p><p style="padding-top: 5pt;text-indent: 0pt;text-align: left;"><br/></p><h3 style="padding-left: 11pt;text-indent: 0pt;text-align: left;">Phone: <span class="p">909-994-7590  </span>Email<a href="mailto:aquinonez24@gmail.com" class="a" target="_blank">: </a><span class="p">aquinonez24@gmail.com  </span>Location: <span class="p">Pomona, CA</span></h3><p style="padding-top: 6pt;text-indent: 0pt;text-align: left;"><br/></p><h1 style="padding-left: 10pt;text-indent: 0pt;text-align: left;">Education:</h1><p style="padding-top: 8pt;padding-left: 105pt;text-indent: -95pt;line-height: 148%;text-align: left;">May 2013     New York, NY <b>Pace University, B.B.A in Quantitative Business Analysis Accolades: </b>Cum Lade</p><p style="padding-top: 1pt;text-indent: 0pt;text-align: left;"><br/></p><h1 style="padding-left: 6pt;text-indent: 0pt;text-align: left;">Professional Experience</h1><p style="padding-top: 9pt;text-indent: 0pt;text-align: left;"><br/></p><p style="padding-left: 6pt;text-indent: 0pt;text-align: left;">5/2020 -Present  <u>NetSuite Engineer </u>Bird, Santa Monica, CA</p><p style="padding-top: 8pt;padding-left: 105pt;text-indent: 0pt;line-height: 81%;text-align: left;">Track inventory between physical locations, and increase overall visibility of inventory transfers</p><h3 style="padding-top: 6pt;padding-left: 105pt;text-indent: 0pt;text-align: left;">Highlights<span class="p">:</span></h3><p style="padding-top: 8pt;padding-left: 105pt;text-indent: 0pt;line-height: 80%;text-align: left;">Automate reconciliation of quantity differences within internal applications using RESTLets, Celigo &amp; Amazon S3</p><p style="padding-top: 9pt;padding-left: 105pt;text-indent: 0pt;line-height: 80%;text-align: left;">Ingest inventory details from various 3PL&#39;s to automate the creation of Purchase Orders, Vendor Bills &amp; Sales Orders</p><p style="padding-top: 6pt;padding-left: 105pt;text-indent: 0pt;line-height: 137%;text-align: left;">Create Interfaces between NetSuite and our internal reporting application Implement and Enhance Advanced Approvals in NetSuite</p><p style="padding-top: 2pt;padding-left: 105pt;text-indent: 0pt;line-height: 80%;text-align: left;">Automate validation of average cost per item by location with MapReduce for intercompany inventory transfer</p><p style="padding-top: 6pt;padding-left: 105pt;text-indent: 0pt;line-height: 137%;text-align: left;">Automate the generation of downstream intercompany transactions (Item Fulfillments ,Vendor Bills and Invoices)</p><p style="padding-top: 2pt;padding-left: 105pt;text-indent: 0pt;line-height: 80%;text-align: left;">Collaborated in the design and end to end implementation of a new features within NetSuite.</p><p style="padding-top: 6pt;padding-left: 105pt;text-indent: 0pt;text-align: left;">Provide technical support to finance and accounting teams within Bird</p><p style="padding-top: 4pt;padding-left: 7pt;text-indent: 0pt;text-align: left;">6/2019 —4/2020 <u>Sr. NetSuite Developer </u><b>Grove Collaborative</b>, San Francisco, <i>CA</i></p><p style="padding-top: 8pt;padding-left: 105pt;text-indent: 0pt;line-height: 80%;text-align: left;">Automate and enhance operational tools for Finance &amp; Engineering to track the movement of inventory between warehouse&#39;s across</p><p style="padding-left: 105pt;text-indent: 0pt;line-height: 14pt;text-align: left;">various internal applications.</p><h3 style="padding-top: 5pt;padding-left: 105pt;text-indent: 0pt;text-align: left;">Highlights<span class="p">:</span></h3><p style="padding-top: 8pt;padding-left: 105pt;text-indent: 0pt;line-height: 80%;text-align: left;">Use SuiteScript &amp; Dell Boomi to map/Integrate third party application like HighJump, PayPal, Stripe, Amazon S3 to NetSuite</p><p style="padding-top: 6pt;padding-left: 105pt;text-indent: 0pt;line-height: 14pt;text-align: left;">Build custom software for reconciling inventory across all transactions</p><p style="padding-top: 1pt;padding-left: 105pt;text-indent: 0pt;line-height: 80%;text-align: left;">between our internal warehouse management systems &amp; other third party applications</p><p style="padding-top: 9pt;padding-left: 105pt;text-indent: 0pt;line-height: 80%;text-align: left;">Automate receipt generation &amp; the transfer of inventory using SuiteScript and Dell Boomi</p><p style="padding-top: 9pt;padding-left: 105pt;text-indent: 0pt;line-height: 80%;text-align: left;">Develop MapReduce scripts to maintain order integrity; Deployed scheduled process to update aging orders and fetch third party</p><p style="padding-left: 105pt;text-indent: 0pt;line-height: 14pt;text-align: left;">external ID&#39;s</p><p style="padding-top: 8pt;padding-left: 105pt;text-indent: 0pt;line-height: 80%;text-align: left;">Provide data analysis, data mapping, data loading, and data validation to Finance/Engineering</p><p style="padding-top: 9pt;padding-left: 105pt;text-indent: 0pt;line-height: 80%;text-align: left;">Built data pipeline to support various operational metrics such as inventory counts across systems, revenue recognition, banking &amp; order fulfillment</p><p style="padding-top: 12pt;text-indent: 0pt;text-align: left;"><br/></p><p style="padding-left: 7pt;text-indent: 0pt;text-align: left;">9/2017 —6/2019 <u>NetSuite Developer </u><b>CarGurus</b>, Cambridge, MA</p><p style="padding-top: 8pt;padding-left: 105pt;text-indent: 0pt;line-height: 80%;text-align: left;">Work closely with Stakeholders across various disciplines within Engineering, Sales &amp; Finance to enhance and automate the accounting process while following ASC 606 guidelines.</p><h3 style="padding-top: 6pt;padding-left: 105pt;text-indent: 0pt;text-align: left;">Highlights<span class="p">:</span></h3><p style="padding-top: 8pt;padding-left: 105pt;text-indent: 0pt;line-height: 80%;text-align: left;">Implemented Advanced Revenue Recognition module within NetSuite that synchronized revenue from Zuora and various third party applications.</p><p style="padding-top: 9pt;padding-left: 105pt;text-indent: 0pt;line-height: 80%;text-align: justify;">Built and implemented SuiteCloud Development Framework to formalize our development pipeline and become SOX compliant using version control with GitHub.</p><p style="padding-top: 9pt;padding-left: 105pt;text-indent: 0pt;line-height: 80%;text-align: justify;">Automated data integration between NetSuite, Concur, Workday &amp; Zoura via Scheduled scripts, workflows and Dell Boomi API’s.</p><p style="padding-top: 9pt;padding-left: 105pt;text-indent: 0pt;line-height: 80%;text-align: left;">Built custom ACH module to automate electronic payments processing with our bank using SFTP for file transfer.</p><p style="padding-top: 6pt;padding-left: 105pt;text-indent: 0pt;text-align: left;">Automated reporting for Fixed Assets &amp; Revenue Recognition</p><p style="padding-top: 8pt;padding-left: 105pt;text-indent: 0pt;line-height: 81%;text-align: justify;">Implemented a variety of approval processes within NetSuite to become SOX compliant; i.e. Journal Entry/Vendor/Customer Approval processes.</p><p style="padding-top: 4pt;padding-left: 9pt;text-indent: 0pt;text-align: left;">7/2015 —9/2017 <u>NetSuite Admin</u> <b>Harvest Power</b>, <i>Waltham, MA</i></p><p style="padding-top: 5pt;padding-left: 107pt;text-indent: 0pt;line-height: 14pt;text-align: left;">Provide web development and design to NetSuite users throughout all Harvest</p><p style="padding-top: 1pt;padding-left: 107pt;text-indent: 0pt;line-height: 80%;text-align: left;">Locations across the United States and Canada. Customize and enhance NetSuite with use of JavaScript, HTML, CSS, SQL, SuiteScript and other third party API&#39;s.</p><h3 style="padding-top: 6pt;padding-left: 107pt;text-indent: 0pt;text-align: left;">Highlights:</h3><p style="padding-top: 8pt;padding-left: 107pt;text-indent: 0pt;line-height: 80%;text-align: left;">Implemented custom business processes which synchronizes form data in real- time, validates user input and enforces rules to maintain data integrity</p><p style="padding-top: 9pt;padding-left: 107pt;text-indent: 0pt;line-height: 80%;text-align: left;">Developed “Tax Automation” module in compliance with the Canadian Ministry of Finance. Helped avoid receiving additional fines and consulting fees.</p><p style="padding-top: 6pt;padding-left: 107pt;text-indent: 0pt;line-height: 14pt;text-align: left;">Designed and deployed Pick Slip, Pack Slip, Item Fulfillment and many other</p><p style="padding-left: 107pt;text-indent: 0pt;line-height: 14pt;text-align: left;">transactional PDF documents with content dynamically populating from NetSuite.</p><p style="padding-top: 8pt;padding-left: 107pt;text-indent: 0pt;line-height: 80%;text-align: left;">Developed custom vendor portal which offers a NetSuite-like experience with limited functionality and permissions. Provided manufacturing partners with real- time visibility on inventory counts.</p><p style="padding-top: 11pt;text-indent: 0pt;text-align: left;"><br/></p><h2 style="padding-left: 5pt;text-indent: 0pt;text-align: left;">Technical Skills:</h2><p style="padding-top: 8pt;padding-left: 104pt;text-indent: 0pt;line-height: 15pt;text-align: left;">JavaScript, GIT, SOAP, XML, JSON, node ,HTML, CSS, Freemarker, Eclipse, SQL,</p><p style="padding-left: 104pt;text-indent: 0pt;line-height: 92%;text-align: left;">Keras, Looker, AWS, Dell Boomi, Tensorflow, jQuery, Python, iPython, R, Pandas, SuiteScript 1&amp;2, Google Apps, Office 365, Salesforce, Zoura, Concur, JumpCloud, Slack, Confluence, Workday, NetSuite, Groovy, Celigo</p><h3 style="padding-top: 7pt;padding-left: 104pt;text-indent: 0pt;text-align: left;">Certified: <span class="p">SuiteScript 1&amp;2 Server Side &amp; UI, SuiteTalk for Webservices</span></h3></body></html>';
-  
-  pdf.html(document.body, {
-      callback: function (doc) {
-        doc.save();
-      }
-    });
-
-    // Define the page width and height
-    const pageWidth = pdf.internal.pageSize.getWidth();
-    const pageHeight = pdf.internal.pageSize.getHeight();
-
-    // Add a header
-    pdf.setFont("helvetica", "bold");
-    pdf.setFontSize(18);
-    pdf.text("My Resume", pageWidth / 2, 40, { align: "center" });
-
-    // Add a horizontal line below the header
-    pdf.setLineWidth(0.5);
-    pdf.line(20, 50, pageWidth - 20, 50);
-
-    // Add content (e.g., sections of your resume)
-    pdf.setFont("helvetica", "normal");
-    pdf.setFontSize(12);
-    pdf.text("John Doe", 20, 80);
-    pdf.text("Web Developer | Designer | Problem Solver", 20, 100);
-
-    pdf.text("About Me:", 20, 140);
-    pdf.text(
-      "I'm a highly motivated web developer with experience in building dynamic and user-friendly websites.",
-      20,
-      160,
-      { maxWidth: pageWidth - 40 }
-    );
-
-    // Add additional sections
-    pdf.text("Skills:", 20, 200);
-    pdf.text("- JavaScript", 20, 220);
-    pdf.text("- HTML & CSS", 20, 240);
-    pdf.text("- React", 20, 260);
-
-    // // Save the PDF
-    // pdf.save("My_Resume.pdf");
-  });
-
-</script>
-
-</html>
+      <h2>Technical Skills</h2>
+      <ul>
+        <li><strong>Programming & Tools:</strong> JavaScript, SuiteScript, Python, SQL, Dell Boomi, RESTlets, SOAP, HTML, CSS, Freemarker, Eclipse, R, Pandas, TensorFlow, Keras, AWS, jQuery.</li>
+        <li><strong>Platforms & APIs:</strong> NetSuite, Salesforce, Workday, OAuth 2.0/1.0, JWT.</li>
+        <li><strong>Certifications:</strong> SuiteScript 1.0/2.0 Server-Side & UI, SuiteTalk for Web Services.</li>
+      </ul>
+    
+    </body>
+    </html>
+    
